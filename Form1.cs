@@ -264,14 +264,262 @@ namespace Paint
             activeColorPanel.BackColor = Color.Gray;
         }
 
+        // maroon
+        private void maroonColorPanel_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
 
-        //Colors
-        private void choiceColor_Click(object sender, EventArgs e)
+        private void maroonColorPanel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void maroonColorPanel_Click(object sender, EventArgs e)
+        {
+            colorOfInstrument = Color.Maroon;
+            activeColorPanel.BackColor = Color.Maroon;
+        }
+
+        // darkOrange
+        private void darkOrangeColorPanel_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void darkOrangeColorPanel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void darkOrangeColorPanel_Click(object sender, EventArgs e)
+        {
+            colorOfInstrument = Color.FromArgb(192, 64, 0);
+            activeColorPanel.BackColor = Color.FromArgb(192, 64, 0);
+        }
+
+        // red
+        private void redColorPanel_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void redColorPanel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void redColorPanel_Click(object sender, EventArgs e)
+        {
+            colorOfInstrument = Color.Red;
+            activeColorPanel.BackColor = Color.Red;
+        }
+
+        // pink
+        private void pinkColorPanel_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pinkColorPanel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void pinkColorPanel_Click(object sender, EventArgs e)
+        {
+            colorOfInstrument = Color.FromArgb(255, 192, 255);
+            activeColorPanel.BackColor = Color.FromArgb(255, 192, 255);
+        }
+
+        // orange
+        private void orangeColorPanel_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void orangeColorPanel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void orangeColorPanel_Click(object sender, EventArgs e)
+        {
+            colorOfInstrument = Color.FromArgb(255, 128, 0);
+            activeColorPanel.BackColor = Color.FromArgb(255, 128, 0);
+        }
+
+        // yellow
+        private void yellowColorPanel_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void yellowColorPanel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void yellowColorPanel_Click(object sender, EventArgs e)
+        {
+            colorOfInstrument = Color.Yellow;
+            activeColorPanel.BackColor = Color.Yellow;
+        }
+
+        // lime
+        private void limeColorPanel_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void limeColorPanel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void limeColorPanel_Click(object sender, EventArgs e)
+        {
+            colorOfInstrument = Color.Lime;
+            activeColorPanel.BackColor = Color.Lime;
+        }
+
+        // Green
+        private void greenColorPanel_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void greenColorPanel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void greenColorPanel_Click(object sender, EventArgs e)
+        {
+            colorOfInstrument = Color.FromArgb(0, 192, 0);
+            activeColorPanel.BackColor = Color.FromArgb(0, 192, 0);
+        }
+
+        // spring
+        private void springColorPanel_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void springColorPanel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void springColorPanel_Click(object sender, EventArgs e)
+        {
+            colorOfInstrument = Color.MediumSpringGreen;
+            activeColorPanel.BackColor = Color.MediumSpringGreen;
+        }
+
+        // cyan
+        private void cyanColorPanel_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void cyanColorPanel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void cyanColorPanel_Click(object sender, EventArgs e)
+        {
+            colorOfInstrument = Color.Cyan;
+            activeColorPanel.BackColor = Color.Cyan;
+        }
+
+        //blue
+        private void blueColorPanel_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void blueColorPanel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void blueColorPanel_Click(object sender, EventArgs e)
+        {
+            colorOfInstrument = Color.Blue;
+            activeColorPanel.BackColor = Color.Blue;
+        }
+
+        // darkPint
+        private void darkPinkColorPanel_MouseEnter_1(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void darkPinkColorPanel_MouseLeave_1(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void darkPinkColorPanel_Click_1(object sender, EventArgs e)
+        {
+            colorOfInstrument = Color.FromArgb(192, 0, 192);
+            activeColorPanel.BackColor = Color.FromArgb(192, 0, 192);
+        }
+
+        // navy
+        private void navyColorPanel_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void navyColorPanel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void navyColorPanel_Click(object sender, EventArgs e)
+        {
+            colorOfInstrument = Color.Navy;
+            activeColorPanel.BackColor = Color.Navy;
+        }
+
+        // purple
+        private void purpleColorPanel_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void purpleColorPanel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void purpleColorPanel_Click(object sender, EventArgs e)
+        {
+            colorOfInstrument = Color.Purple;
+            activeColorPanel.BackColor = Color.Purple;
+        }
+
+
+        // Make another color
+        private void gradientPanel_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void gradientPanel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void gradientPanel_Click(object sender, EventArgs e)
         {
             ColorDialog dialog = new ColorDialog();
             dialog.ShowDialog();
             colorOfInstrument = dialog.Color;
-            //colorPanel.BackColor = dialog.Color;
+            activeColorPanel.BackColor = dialog.Color;
         }
 
     }

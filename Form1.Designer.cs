@@ -37,6 +37,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.headPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.activeColorPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -52,7 +53,7 @@
             this.pinkColorPanel = new System.Windows.Forms.Panel();
             this.greenColorPanel = new System.Windows.Forms.Panel();
             this.silverColorPanel = new System.Windows.Forms.Panel();
-            this.darkPintColorPanel = new System.Windows.Forms.Panel();
+            this.darkPinkColorPanel = new System.Windows.Forms.Panel();
             this.redColorPanel = new System.Windows.Forms.Panel();
             this.cyanColorPanel = new System.Windows.Forms.Panel();
             this.maroonColorPanel = new System.Windows.Forms.Panel();
@@ -67,7 +68,6 @@
             this.fatBrush = new System.Windows.Forms.Panel();
             this.brush = new System.Windows.Forms.Panel();
             this.desk = new System.Windows.Forms.PictureBox();
-            this.activeColorPanel = new System.Windows.Forms.Panel();
             this.headBar.SuspendLayout();
             this.headPanel.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -154,6 +154,15 @@
             this.panel3.Size = new System.Drawing.Size(72, 84);
             this.panel3.TabIndex = 30;
             // 
+            // activeColorPanel
+            // 
+            this.activeColorPanel.BackColor = System.Drawing.Color.Black;
+            this.activeColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.activeColorPanel.Location = new System.Drawing.Point(12, 5);
+            this.activeColorPanel.Name = "activeColorPanel";
+            this.activeColorPanel.Size = new System.Drawing.Size(50, 50);
+            this.activeColorPanel.TabIndex = 4;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -194,6 +203,9 @@
             this.gradientPanel.Size = new System.Drawing.Size(53, 50);
             this.gradientPanel.TabIndex = 1;
             this.gradientPanel.TabStop = false;
+            this.gradientPanel.Click += new System.EventHandler(this.gradientPanel_Click);
+            this.gradientPanel.MouseEnter += new System.EventHandler(this.gradientPanel_MouseEnter);
+            this.gradientPanel.MouseLeave += new System.EventHandler(this.gradientPanel_MouseLeave);
             // 
             // label1
             // 
@@ -226,7 +238,7 @@
             this.panel1.Controls.Add(this.pinkColorPanel);
             this.panel1.Controls.Add(this.greenColorPanel);
             this.panel1.Controls.Add(this.silverColorPanel);
-            this.panel1.Controls.Add(this.darkPintColorPanel);
+            this.panel1.Controls.Add(this.darkPinkColorPanel);
             this.panel1.Controls.Add(this.redColorPanel);
             this.panel1.Controls.Add(this.cyanColorPanel);
             this.panel1.Controls.Add(this.maroonColorPanel);
@@ -249,6 +261,9 @@
             this.purpleColorPanel.Name = "purpleColorPanel";
             this.purpleColorPanel.Size = new System.Drawing.Size(20, 20);
             this.purpleColorPanel.TabIndex = 28;
+            this.purpleColorPanel.Click += new System.EventHandler(this.purpleColorPanel_Click);
+            this.purpleColorPanel.MouseEnter += new System.EventHandler(this.purpleColorPanel_MouseEnter);
+            this.purpleColorPanel.MouseLeave += new System.EventHandler(this.purpleColorPanel_MouseLeave);
             // 
             // orangeColorPanel
             // 
@@ -258,6 +273,9 @@
             this.orangeColorPanel.Name = "orangeColorPanel";
             this.orangeColorPanel.Size = new System.Drawing.Size(20, 20);
             this.orangeColorPanel.TabIndex = 19;
+            this.orangeColorPanel.Click += new System.EventHandler(this.orangeColorPanel_Click);
+            this.orangeColorPanel.MouseEnter += new System.EventHandler(this.orangeColorPanel_MouseEnter);
+            this.orangeColorPanel.MouseLeave += new System.EventHandler(this.orangeColorPanel_MouseLeave);
             // 
             // blueColorPanel
             // 
@@ -267,6 +285,9 @@
             this.blueColorPanel.Name = "blueColorPanel";
             this.blueColorPanel.Size = new System.Drawing.Size(20, 20);
             this.blueColorPanel.TabIndex = 25;
+            this.blueColorPanel.Click += new System.EventHandler(this.blueColorPanel_Click);
+            this.blueColorPanel.MouseEnter += new System.EventHandler(this.blueColorPanel_MouseEnter);
+            this.blueColorPanel.MouseLeave += new System.EventHandler(this.blueColorPanel_MouseLeave);
             // 
             // darkOrangeColorPanel
             // 
@@ -276,6 +297,9 @@
             this.darkOrangeColorPanel.Name = "darkOrangeColorPanel";
             this.darkOrangeColorPanel.Size = new System.Drawing.Size(20, 20);
             this.darkOrangeColorPanel.TabIndex = 16;
+            this.darkOrangeColorPanel.Click += new System.EventHandler(this.darkOrangeColorPanel_Click);
+            this.darkOrangeColorPanel.MouseEnter += new System.EventHandler(this.darkOrangeColorPanel_MouseEnter);
+            this.darkOrangeColorPanel.MouseLeave += new System.EventHandler(this.darkOrangeColorPanel_MouseLeave);
             // 
             // navyColorPanel
             // 
@@ -285,6 +309,9 @@
             this.navyColorPanel.Name = "navyColorPanel";
             this.navyColorPanel.Size = new System.Drawing.Size(20, 20);
             this.navyColorPanel.TabIndex = 27;
+            this.navyColorPanel.Click += new System.EventHandler(this.navyColorPanel_Click);
+            this.navyColorPanel.MouseEnter += new System.EventHandler(this.navyColorPanel_MouseEnter);
+            this.navyColorPanel.MouseLeave += new System.EventHandler(this.navyColorPanel_MouseLeave);
             // 
             // pinkColorPanel
             // 
@@ -294,6 +321,9 @@
             this.pinkColorPanel.Name = "pinkColorPanel";
             this.pinkColorPanel.Size = new System.Drawing.Size(20, 20);
             this.pinkColorPanel.TabIndex = 18;
+            this.pinkColorPanel.Click += new System.EventHandler(this.pinkColorPanel_Click);
+            this.pinkColorPanel.MouseEnter += new System.EventHandler(this.pinkColorPanel_MouseEnter);
+            this.pinkColorPanel.MouseLeave += new System.EventHandler(this.pinkColorPanel_MouseLeave);
             // 
             // greenColorPanel
             // 
@@ -303,6 +333,9 @@
             this.greenColorPanel.Name = "greenColorPanel";
             this.greenColorPanel.Size = new System.Drawing.Size(20, 20);
             this.greenColorPanel.TabIndex = 22;
+            this.greenColorPanel.Click += new System.EventHandler(this.greenColorPanel_Click);
+            this.greenColorPanel.MouseEnter += new System.EventHandler(this.greenColorPanel_MouseEnter);
+            this.greenColorPanel.MouseLeave += new System.EventHandler(this.greenColorPanel_MouseLeave);
             // 
             // silverColorPanel
             // 
@@ -316,14 +349,17 @@
             this.silverColorPanel.MouseEnter += new System.EventHandler(this.silverColorPanel_MouseEnter);
             this.silverColorPanel.MouseLeave += new System.EventHandler(this.silverColorPanel_MouseLeave);
             // 
-            // darkPintColorPanel
+            // darkPinkColorPanel
             // 
-            this.darkPintColorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.darkPintColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkPintColorPanel.Location = new System.Drawing.Point(139, 3);
-            this.darkPintColorPanel.Name = "darkPintColorPanel";
-            this.darkPintColorPanel.Size = new System.Drawing.Size(20, 20);
-            this.darkPintColorPanel.TabIndex = 26;
+            this.darkPinkColorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.darkPinkColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.darkPinkColorPanel.Location = new System.Drawing.Point(139, 3);
+            this.darkPinkColorPanel.Name = "darkPinkColorPanel";
+            this.darkPinkColorPanel.Size = new System.Drawing.Size(20, 20);
+            this.darkPinkColorPanel.TabIndex = 26;
+            this.darkPinkColorPanel.Click += new System.EventHandler(this.darkPinkColorPanel_Click_1);
+            this.darkPinkColorPanel.MouseEnter += new System.EventHandler(this.darkPinkColorPanel_MouseEnter_1);
+            this.darkPinkColorPanel.MouseLeave += new System.EventHandler(this.darkPinkColorPanel_MouseLeave_1);
             // 
             // redColorPanel
             // 
@@ -333,6 +369,9 @@
             this.redColorPanel.Name = "redColorPanel";
             this.redColorPanel.Size = new System.Drawing.Size(20, 20);
             this.redColorPanel.TabIndex = 17;
+            this.redColorPanel.Click += new System.EventHandler(this.redColorPanel_Click);
+            this.redColorPanel.MouseEnter += new System.EventHandler(this.redColorPanel_MouseEnter);
+            this.redColorPanel.MouseLeave += new System.EventHandler(this.redColorPanel_MouseLeave);
             // 
             // cyanColorPanel
             // 
@@ -342,6 +381,9 @@
             this.cyanColorPanel.Name = "cyanColorPanel";
             this.cyanColorPanel.Size = new System.Drawing.Size(20, 20);
             this.cyanColorPanel.TabIndex = 24;
+            this.cyanColorPanel.Click += new System.EventHandler(this.cyanColorPanel_Click);
+            this.cyanColorPanel.MouseEnter += new System.EventHandler(this.cyanColorPanel_MouseEnter);
+            this.cyanColorPanel.MouseLeave += new System.EventHandler(this.cyanColorPanel_MouseLeave);
             // 
             // maroonColorPanel
             // 
@@ -351,6 +393,9 @@
             this.maroonColorPanel.Name = "maroonColorPanel";
             this.maroonColorPanel.Size = new System.Drawing.Size(20, 20);
             this.maroonColorPanel.TabIndex = 15;
+            this.maroonColorPanel.Click += new System.EventHandler(this.maroonColorPanel_Click);
+            this.maroonColorPanel.MouseEnter += new System.EventHandler(this.maroonColorPanel_MouseEnter);
+            this.maroonColorPanel.MouseLeave += new System.EventHandler(this.maroonColorPanel_MouseLeave);
             // 
             // limeColorPanel
             // 
@@ -360,6 +405,9 @@
             this.limeColorPanel.Name = "limeColorPanel";
             this.limeColorPanel.Size = new System.Drawing.Size(20, 20);
             this.limeColorPanel.TabIndex = 21;
+            this.limeColorPanel.Click += new System.EventHandler(this.limeColorPanel_Click);
+            this.limeColorPanel.MouseEnter += new System.EventHandler(this.limeColorPanel_MouseEnter);
+            this.limeColorPanel.MouseLeave += new System.EventHandler(this.limeColorPanel_MouseLeave);
             // 
             // whiteColorPanel
             // 
@@ -381,6 +429,9 @@
             this.springColorPanel.Name = "springColorPanel";
             this.springColorPanel.Size = new System.Drawing.Size(20, 20);
             this.springColorPanel.TabIndex = 23;
+            this.springColorPanel.Click += new System.EventHandler(this.springColorPanel_Click);
+            this.springColorPanel.MouseEnter += new System.EventHandler(this.springColorPanel_MouseEnter);
+            this.springColorPanel.MouseLeave += new System.EventHandler(this.springColorPanel_MouseLeave);
             // 
             // grayColorPanel
             // 
@@ -402,6 +453,9 @@
             this.yellowColorPanel.Name = "yellowColorPanel";
             this.yellowColorPanel.Size = new System.Drawing.Size(20, 20);
             this.yellowColorPanel.TabIndex = 20;
+            this.yellowColorPanel.Click += new System.EventHandler(this.yellowColorPanel_Click);
+            this.yellowColorPanel.MouseEnter += new System.EventHandler(this.yellowColorPanel_MouseEnter);
+            this.yellowColorPanel.MouseLeave += new System.EventHandler(this.yellowColorPanel_MouseLeave);
             // 
             // blackColorPanel
             // 
@@ -479,15 +533,6 @@
             this.desk.MouseMove += new System.Windows.Forms.MouseEventHandler(this.desk_MouseMove);
             this.desk.MouseUp += new System.Windows.Forms.MouseEventHandler(this.desk_MouseUp);
             // 
-            // activeColorPanel
-            // 
-            this.activeColorPanel.BackColor = System.Drawing.Color.Black;
-            this.activeColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.activeColorPanel.Location = new System.Drawing.Point(12, 5);
-            this.activeColorPanel.Name = "activeColorPanel";
-            this.activeColorPanel.Size = new System.Drawing.Size(50, 50);
-            this.activeColorPanel.TabIndex = 4;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,7 +594,7 @@
         private System.Windows.Forms.Panel navyColorPanel;
         private System.Windows.Forms.Panel pinkColorPanel;
         private System.Windows.Forms.Panel greenColorPanel;
-        private System.Windows.Forms.Panel darkPintColorPanel;
+        private System.Windows.Forms.Panel darkPinkColorPanel;
         private System.Windows.Forms.Panel redColorPanel;
         private System.Windows.Forms.Panel cyanColorPanel;
         private System.Windows.Forms.Panel maroonColorPanel;
