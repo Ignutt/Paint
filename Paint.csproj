@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>paint.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.Compatibility" />
@@ -101,6 +104,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\gradient.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\whitePanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\paint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="paint.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

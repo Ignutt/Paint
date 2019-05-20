@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label2 = new System.Windows.Forms.Label();
             this.headBar = new System.Windows.Forms.MenuStrip();
             this.Files = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveDefault = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.newPaper = new System.Windows.Forms.ToolStripMenuItem();
             this.about = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.headPanel = new System.Windows.Forms.Panel();
@@ -41,7 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.gradientPanel = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -64,6 +65,7 @@
             this.yellowColorPanel = new System.Windows.Forms.Panel();
             this.blackColorPanel = new System.Windows.Forms.Panel();
             this.pen = new System.Windows.Forms.Panel();
+            this.gradientPanel = new System.Windows.Forms.PictureBox();
             this.filling = new System.Windows.Forms.Panel();
             this.fatBrush = new System.Windows.Forms.Panel();
             this.brush = new System.Windows.Forms.Panel();
@@ -72,8 +74,8 @@
             this.headPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gradientPanel)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gradientPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.desk)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +83,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe Script", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(807, 598);
+            this.label2.Location = new System.Drawing.Point(806, 559);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 23);
             this.label2.TabIndex = 8;
@@ -101,7 +103,8 @@
             // 
             this.Files.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SaveDefault,
-            this.SaveAs});
+            this.SaveAs,
+            this.newPaper});
             this.Files.Name = "Files";
             this.Files.Size = new System.Drawing.Size(42, 20);
             this.Files.Text = "Files";
@@ -117,6 +120,14 @@
             this.SaveAs.Name = "SaveAs";
             this.SaveAs.Size = new System.Drawing.Size(112, 22);
             this.SaveAs.Text = "Save as";
+            this.SaveAs.Click += new System.EventHandler(this.SaveAs_Click);
+            // 
+            // newPaper
+            // 
+            this.newPaper.Name = "newPaper";
+            this.newPaper.Size = new System.Drawing.Size(112, 22);
+            this.newPaper.Text = "New";
+            this.newPaper.Click += new System.EventHandler(this.newPaper_Click);
             // 
             // about
             // 
@@ -193,19 +204,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(72, 84);
             this.panel2.TabIndex = 29;
-            // 
-            // gradientPanel
-            // 
-            this.gradientPanel.BackgroundImage = global::Paint.Properties.Resources.gradient;
-            this.gradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.gradientPanel.Location = new System.Drawing.Point(10, 2);
-            this.gradientPanel.Name = "gradientPanel";
-            this.gradientPanel.Size = new System.Drawing.Size(53, 50);
-            this.gradientPanel.TabIndex = 1;
-            this.gradientPanel.TabStop = false;
-            this.gradientPanel.Click += new System.EventHandler(this.gradientPanel_Click);
-            this.gradientPanel.MouseEnter += new System.EventHandler(this.gradientPanel_MouseEnter);
-            this.gradientPanel.MouseLeave += new System.EventHandler(this.gradientPanel_MouseLeave);
             // 
             // label1
             // 
@@ -482,6 +480,19 @@
             this.pen.MouseEnter += new System.EventHandler(this.pen_MouseEnter);
             this.pen.MouseLeave += new System.EventHandler(this.pen_MouseLeave);
             // 
+            // gradientPanel
+            // 
+            this.gradientPanel.BackgroundImage = global::Paint.Properties.Resources.gradient;
+            this.gradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gradientPanel.Location = new System.Drawing.Point(10, 2);
+            this.gradientPanel.Name = "gradientPanel";
+            this.gradientPanel.Size = new System.Drawing.Size(53, 50);
+            this.gradientPanel.TabIndex = 1;
+            this.gradientPanel.TabStop = false;
+            this.gradientPanel.Click += new System.EventHandler(this.gradientPanel_Click);
+            this.gradientPanel.MouseEnter += new System.EventHandler(this.gradientPanel_MouseEnter);
+            this.gradientPanel.MouseLeave += new System.EventHandler(this.gradientPanel_MouseLeave);
+            // 
             // filling
             // 
             this.filling.BackgroundImage = global::Paint.Properties.Resources.fill_img;
@@ -522,9 +533,10 @@
             // 
             this.desk.BackColor = System.Drawing.Color.White;
             this.desk.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.desk.Location = new System.Drawing.Point(12, 134);
+            this.desk.Image = global::Paint.Properties.Resources.whitePanel;
+            this.desk.Location = new System.Drawing.Point(12, 123);
             this.desk.Name = "desk";
-            this.desk.Size = new System.Drawing.Size(516, 474);
+            this.desk.Size = new System.Drawing.Size(516, 448);
             this.desk.TabIndex = 0;
             this.desk.TabStop = false;
             this.desk.MouseDown += new System.Windows.Forms.MouseEventHandler(this.desk_MouseDown);
@@ -538,7 +550,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(932, 620);
+            this.ClientSize = new System.Drawing.Size(932, 580);
             this.Controls.Add(this.pen);
             this.Controls.Add(this.headPanel);
             this.Controls.Add(this.label2);
@@ -548,6 +560,7 @@
             this.Controls.Add(this.desk);
             this.Controls.Add(this.headBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.headBar;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -559,8 +572,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gradientPanel)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gradientPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.desk)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -609,6 +622,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel activeColorPanel;
+        private System.Windows.Forms.ToolStripMenuItem newPaper;
     }
 }
 

@@ -37,18 +37,23 @@ namespace Paint
             Graphics g = desk.CreateGraphics();
             SolidBrush brushes = new SolidBrush(colorOfInstrument);
 
+            Image bmp = desk.Image;
+            Graphics graph = Graphics.FromImage(bmp);
+
             if (penDrawing == true)
             {
                 g.FillRectangle(brushes, e.X, e.Y, defaultSizePen, defaultSizePen);
-
+                graph.FillRectangle(brushes, e.X, e.Y, defaultSizePen, defaultSizePen);
             }
             else if (brushDrawing == true)
             {
                 g.FillEllipse(brushes, e.X, e.Y, defaultSizeBrush, defaultSizeBrush);
+                graph.FillEllipse(brushes, e.X, e.Y, defaultSizeBrush, defaultSizeBrush);
             }
             else if (fatBrushDrawing == true)
             {
                 g.FillEllipse(brushes, e.X, e.Y, defaultSizeFatBrushWidth, defaultSizeFatBrushHeight);
+                graph.FillEllipse(brushes, e.X, e.Y, defaultSizeBrush, defaultSizeBrush);
             }
             else if (fillingDrawing == true)
             {
@@ -63,17 +68,23 @@ namespace Paint
                 Graphics g = desk.CreateGraphics();
                 SolidBrush brushes = new SolidBrush(colorOfInstrument);
 
+                Image bmp = desk.Image;
+                Graphics graph = Graphics.FromImage(bmp);
+
                 if (penDrawing == true)
                 {
                     g.FillRectangle(brushes, e.X, e.Y, defaultSizePen, defaultSizePen);
+                    graph.FillRectangle(brushes, e.X, e.Y, defaultSizePen, defaultSizePen);
                 }
                 else if (brushDrawing == true)
                 {
                     g.FillEllipse(brushes, e.X, e.Y, defaultSizeBrush, defaultSizeBrush);
+                    graph.FillRectangle(brushes, e.X, e.Y, defaultSizePen, defaultSizePen);
                 }
                 else if (fatBrushDrawing == true)
                 {
                     g.FillEllipse(brushes, e.X, e.Y , defaultSizeFatBrushWidth, defaultSizeFatBrushHeight);
+                    graph.FillRectangle(brushes, e.X, e.Y, defaultSizePen, defaultSizePen);
                 }
                 else if (fillingDrawing == true)
                 {
@@ -491,6 +502,7 @@ namespace Paint
             this.Cursor = Cursors.Hand;
         }
 
+
         private void purpleColorPanel_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
@@ -520,6 +532,41 @@ namespace Paint
             dialog.ShowDialog();
             colorOfInstrument = dialog.Color;
             activeColorPanel.BackColor = dialog.Color;
+        }
+
+        //Clean Paper
+        private void newPaper_Click(object sender, EventArgs e)
+        {
+            desk.Image = Properties.Resources.whitePanel;
+        }
+
+        private void SaveAs_Click(object sender, EventArgs e)
+        {
+            if (desk.Image != null)
+            {
+                SaveFileDialog saveDialoge = new SaveFileDialog();
+                saveDialoge.Title = "Save image...";
+                saveDialoge.OverwritePrompt = true;
+                saveDialoge.CheckPathExists = true;
+                saveDialoge.Filter = "Image Files(*.BMP)|*.BMP|Image Files (*.JPG)|*.JPG|Image Files (*.PNG)|*.PNG|All files(*.*)|*.*";
+                saveDialoge.ShowHelp = true;
+
+                if (saveDialoge.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        desk.Image.Save(saveDialoge.FileName);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("GG");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Дэбил");
+            }
         }
 
     }
