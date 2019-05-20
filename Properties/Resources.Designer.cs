@@ -93,9 +93,19 @@ namespace Paint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap paint {
+        internal static System.Drawing.Bitmap loadScreen {
             get {
-                object obj = ResourceManager.GetObject("paint", resourceCulture);
+                object obj = ResourceManager.GetObject("loadScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paintLogoText_ {
+            get {
+                object obj = ResourceManager.GetObject("paintLogoText ", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

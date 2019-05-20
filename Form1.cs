@@ -17,6 +17,11 @@ namespace Paint
             InitializeComponent();
         }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
         bool paint = false,
              brushDrawing = false,
              penDrawing = true,
@@ -501,7 +506,6 @@ namespace Paint
         {
             this.Cursor = Cursors.Hand;
         }
-
 
         private void purpleColorPanel_MouseLeave(object sender, EventArgs e)
         {

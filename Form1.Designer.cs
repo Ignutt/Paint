@@ -43,6 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.gradientPanel = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -65,7 +66,6 @@
             this.yellowColorPanel = new System.Windows.Forms.Panel();
             this.blackColorPanel = new System.Windows.Forms.Panel();
             this.pen = new System.Windows.Forms.Panel();
-            this.gradientPanel = new System.Windows.Forms.PictureBox();
             this.filling = new System.Windows.Forms.Panel();
             this.fatBrush = new System.Windows.Forms.Panel();
             this.brush = new System.Windows.Forms.Panel();
@@ -74,8 +74,8 @@
             this.headPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gradientPanel)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.desk)).BeginInit();
             this.SuspendLayout();
             // 
@@ -204,6 +204,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(72, 84);
             this.panel2.TabIndex = 29;
+            // 
+            // gradientPanel
+            // 
+            this.gradientPanel.BackgroundImage = global::Paint.Properties.Resources.gradient;
+            this.gradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gradientPanel.Location = new System.Drawing.Point(10, 2);
+            this.gradientPanel.Name = "gradientPanel";
+            this.gradientPanel.Size = new System.Drawing.Size(53, 50);
+            this.gradientPanel.TabIndex = 1;
+            this.gradientPanel.TabStop = false;
+            this.gradientPanel.Click += new System.EventHandler(this.gradientPanel_Click);
+            this.gradientPanel.MouseEnter += new System.EventHandler(this.gradientPanel_MouseEnter);
+            this.gradientPanel.MouseLeave += new System.EventHandler(this.gradientPanel_MouseLeave);
             // 
             // label1
             // 
@@ -480,19 +493,6 @@
             this.pen.MouseEnter += new System.EventHandler(this.pen_MouseEnter);
             this.pen.MouseLeave += new System.EventHandler(this.pen_MouseLeave);
             // 
-            // gradientPanel
-            // 
-            this.gradientPanel.BackgroundImage = global::Paint.Properties.Resources.gradient;
-            this.gradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.gradientPanel.Location = new System.Drawing.Point(10, 2);
-            this.gradientPanel.Name = "gradientPanel";
-            this.gradientPanel.Size = new System.Drawing.Size(53, 50);
-            this.gradientPanel.TabIndex = 1;
-            this.gradientPanel.TabStop = false;
-            this.gradientPanel.Click += new System.EventHandler(this.gradientPanel_Click);
-            this.gradientPanel.MouseEnter += new System.EventHandler(this.gradientPanel_MouseEnter);
-            this.gradientPanel.MouseLeave += new System.EventHandler(this.gradientPanel_MouseLeave);
-            // 
             // filling
             // 
             this.filling.BackgroundImage = global::Paint.Properties.Resources.fill_img;
@@ -565,6 +565,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paint";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.headBar.ResumeLayout(false);
             this.headBar.PerformLayout();
             this.headPanel.ResumeLayout(false);
@@ -572,8 +573,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gradientPanel)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.desk)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

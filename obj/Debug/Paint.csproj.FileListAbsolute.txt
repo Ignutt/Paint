@@ -17,3 +17,4 @@ D:\SpaceWork\CSharp\Paint\obj\Debug\Paint.csproj.GenerateResource.cache
 D:\SpaceWork\CSharp\Paint\obj\Debug\Paint.csproj.CoreCompileInputs.cache
 D:\SpaceWork\CSharp\Paint\obj\Debug\Paint.exe
 D:\SpaceWork\CSharp\Paint\obj\Debug\Paint.pdb
+D:\SpaceWork\CSharp\Paint\obj\Debug\Paint.loadingScreen.resources
