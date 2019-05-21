@@ -73,6 +73,16 @@ namespace Paint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eraser {
+            get {
+                object obj = ResourceManager.GetObject("eraser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fill_img {
             get {
                 object obj = ResourceManager.GetObject("fill_img", resourceCulture);
@@ -133,9 +143,9 @@ namespace Paint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap widthBrush_img {
+        internal static System.Drawing.Bitmap widthBrush_img_ {
             get {
-                object obj = ResourceManager.GetObject("widthBrush_img", resourceCulture);
+                object obj = ResourceManager.GetObject("widthBrush_img ", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.label2 = new System.Windows.Forms.Label();
             this.headBar = new System.Windows.Forms.MenuStrip();
             this.Files = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveDefault = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,6 +38,11 @@
             this.about = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.headPanel = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pen = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.fatBrush = new System.Windows.Forms.Panel();
+            this.brush = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.activeColorPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,29 +70,18 @@
             this.grayColorPanel = new System.Windows.Forms.Panel();
             this.yellowColorPanel = new System.Windows.Forms.Panel();
             this.blackColorPanel = new System.Windows.Forms.Panel();
-            this.pen = new System.Windows.Forms.Panel();
-            this.filling = new System.Windows.Forms.Panel();
-            this.fatBrush = new System.Windows.Forms.Panel();
-            this.brush = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.desk = new System.Windows.Forms.PictureBox();
+            this.eraser = new System.Windows.Forms.Panel();
             this.headBar.SuspendLayout();
             this.headPanel.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gradientPanel)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.desk)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe Script", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(806, 559);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 23);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "made by Ignat";
             // 
             // headBar
             // 
@@ -96,7 +90,7 @@
             this.about});
             this.headBar.Location = new System.Drawing.Point(0, 0);
             this.headBar.Name = "headBar";
-            this.headBar.Size = new System.Drawing.Size(932, 24);
+            this.headBar.Size = new System.Drawing.Size(939, 24);
             this.headBar.TabIndex = 9;
             // 
             // Files
@@ -146,13 +140,74 @@
             // headPanel
             // 
             this.headPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.headPanel.Controls.Add(this.panel4);
             this.headPanel.Controls.Add(this.panel3);
             this.headPanel.Controls.Add(this.panel2);
             this.headPanel.Controls.Add(this.panel1);
             this.headPanel.Location = new System.Drawing.Point(1, 25);
             this.headPanel.Name = "headPanel";
-            this.headPanel.Size = new System.Drawing.Size(930, 92);
+            this.headPanel.Size = new System.Drawing.Size(938, 105);
             this.headPanel.TabIndex = 10;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel4.Controls.Add(this.eraser);
+            this.panel4.Controls.Add(this.pen);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.fatBrush);
+            this.panel4.Controls.Add(this.brush);
+            this.panel4.Location = new System.Drawing.Point(474, 5);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(117, 95);
+            this.panel4.TabIndex = 31;
+            // 
+            // pen
+            // 
+            this.pen.BackgroundImage = global::Paint.Properties.Resources.pen_img;
+            this.pen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pen.Location = new System.Drawing.Point(0, 0);
+            this.pen.Name = "pen";
+            this.pen.Size = new System.Drawing.Size(37, 37);
+            this.pen.TabIndex = 1;
+            this.pen.Click += new System.EventHandler(this.pen_Click);
+            this.pen.MouseEnter += new System.EventHandler(this.pen_MouseEnter);
+            this.pen.MouseLeave += new System.EventHandler(this.pen_MouseLeave);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(45, 80);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "tools";
+            // 
+            // fatBrush
+            // 
+            this.fatBrush.BackgroundImage = global::Paint.Properties.Resources.widthBrush_img_;
+            this.fatBrush.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.fatBrush.Location = new System.Drawing.Point(78, 0);
+            this.fatBrush.Name = "fatBrush";
+            this.fatBrush.Size = new System.Drawing.Size(37, 37);
+            this.fatBrush.TabIndex = 3;
+            this.fatBrush.Click += new System.EventHandler(this.fatBrush_Click);
+            this.fatBrush.MouseEnter += new System.EventHandler(this.fatBrush_MouseEnter);
+            this.fatBrush.MouseLeave += new System.EventHandler(this.fatBrush_MouseLeave);
+            // 
+            // brush
+            // 
+            this.brush.BackgroundImage = global::Paint.Properties.Resources.brush_img;
+            this.brush.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.brush.Location = new System.Drawing.Point(40, 0);
+            this.brush.Name = "brush";
+            this.brush.Size = new System.Drawing.Size(37, 37);
+            this.brush.TabIndex = 2;
+            this.brush.Click += new System.EventHandler(this.brush_Click);
+            this.brush.MouseEnter += new System.EventHandler(this.brush_MouseEnter);
+            this.brush.MouseLeave += new System.EventHandler(this.brush_MouseLeave);
             // 
             // panel3
             // 
@@ -160,7 +215,7 @@
             this.panel3.Controls.Add(this.activeColorPanel);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(446, 2);
+            this.panel3.Location = new System.Drawing.Point(597, 8);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(72, 84);
             this.panel3.TabIndex = 30;
@@ -200,7 +255,7 @@
             this.panel2.Controls.Add(this.gradientPanel);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(697, 5);
+            this.panel2.Location = new System.Drawing.Point(848, 5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(72, 84);
             this.panel2.TabIndex = 29;
@@ -259,7 +314,7 @@
             this.panel1.Controls.Add(this.grayColorPanel);
             this.panel1.Controls.Add(this.yellowColorPanel);
             this.panel1.Controls.Add(this.blackColorPanel);
-            this.panel1.Location = new System.Drawing.Point(524, 5);
+            this.panel1.Location = new System.Drawing.Point(675, 9);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(167, 80);
             this.panel1.TabIndex = 0;
@@ -480,63 +535,19 @@
             this.blackColorPanel.MouseEnter += new System.EventHandler(this.blackColorPanel_MouseEnter);
             this.blackColorPanel.MouseLeave += new System.EventHandler(this.blackColorPanel_MouseLeave);
             // 
-            // pen
+            // contextMenuStrip1
             // 
-            this.pen.BackgroundImage = global::Paint.Properties.Resources.pen_img;
-            this.pen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pen.Location = new System.Drawing.Point(534, 134);
-            this.pen.Name = "pen";
-            this.pen.Size = new System.Drawing.Size(83, 87);
-            this.pen.TabIndex = 1;
-            this.pen.Click += new System.EventHandler(this.pen_Click);
-            this.pen.MouseEnter += new System.EventHandler(this.pen_MouseEnter);
-            this.pen.MouseLeave += new System.EventHandler(this.pen_MouseLeave);
-            // 
-            // filling
-            // 
-            this.filling.BackgroundImage = global::Paint.Properties.Resources.fill_img;
-            this.filling.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.filling.Location = new System.Drawing.Point(623, 227);
-            this.filling.Name = "filling";
-            this.filling.Size = new System.Drawing.Size(83, 87);
-            this.filling.TabIndex = 4;
-            this.filling.Click += new System.EventHandler(this.filling_Click);
-            this.filling.MouseEnter += new System.EventHandler(this.filling_MouseEnter);
-            this.filling.MouseLeave += new System.EventHandler(this.filling_MouseLeave);
-            // 
-            // fatBrush
-            // 
-            this.fatBrush.BackgroundImage = global::Paint.Properties.Resources.widthBrush_img;
-            this.fatBrush.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.fatBrush.Location = new System.Drawing.Point(534, 227);
-            this.fatBrush.Name = "fatBrush";
-            this.fatBrush.Size = new System.Drawing.Size(83, 87);
-            this.fatBrush.TabIndex = 3;
-            this.fatBrush.Click += new System.EventHandler(this.fatBrush_Click);
-            this.fatBrush.MouseEnter += new System.EventHandler(this.fatBrush_MouseEnter);
-            this.fatBrush.MouseLeave += new System.EventHandler(this.fatBrush_MouseLeave);
-            // 
-            // brush
-            // 
-            this.brush.BackgroundImage = global::Paint.Properties.Resources.brush_img;
-            this.brush.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.brush.Location = new System.Drawing.Point(623, 134);
-            this.brush.Name = "brush";
-            this.brush.Size = new System.Drawing.Size(83, 87);
-            this.brush.TabIndex = 2;
-            this.brush.Click += new System.EventHandler(this.brush_Click);
-            this.brush.MouseEnter += new System.EventHandler(this.brush_MouseEnter);
-            this.brush.MouseLeave += new System.EventHandler(this.brush_MouseLeave);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // desk
             // 
             this.desk.BackColor = System.Drawing.Color.White;
             this.desk.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.desk.Image = global::Paint.Properties.Resources.whitePanel;
-            this.desk.Location = new System.Drawing.Point(12, 123);
+            this.desk.Location = new System.Drawing.Point(12, 136);
             this.desk.Name = "desk";
-            this.desk.Size = new System.Drawing.Size(516, 448);
+            this.desk.Size = new System.Drawing.Size(919, 445);
             this.desk.TabIndex = 0;
             this.desk.TabStop = false;
             this.desk.MouseDown += new System.Windows.Forms.MouseEventHandler(this.desk_MouseDown);
@@ -545,18 +556,25 @@
             this.desk.MouseMove += new System.Windows.Forms.MouseEventHandler(this.desk_MouseMove);
             this.desk.MouseUp += new System.Windows.Forms.MouseEventHandler(this.desk_MouseUp);
             // 
+            // eraser
+            // 
+            this.eraser.BackgroundImage = global::Paint.Properties.Resources.eraser;
+            this.eraser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.eraser.Location = new System.Drawing.Point(0, 38);
+            this.eraser.Name = "eraser";
+            this.eraser.Size = new System.Drawing.Size(37, 37);
+            this.eraser.TabIndex = 2;
+            this.eraser.Click += new System.EventHandler(this.eraser_Click);
+            this.eraser.MouseEnter += new System.EventHandler(this.eraser_MouseEnter);
+            this.eraser.MouseLeave += new System.EventHandler(this.eraser_MouseLeave);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(932, 580);
-            this.Controls.Add(this.pen);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(939, 593);
             this.Controls.Add(this.headPanel);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.filling);
-            this.Controls.Add(this.fatBrush);
-            this.Controls.Add(this.brush);
             this.Controls.Add(this.desk);
             this.Controls.Add(this.headBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -569,6 +587,8 @@
             this.headBar.ResumeLayout(false);
             this.headBar.PerformLayout();
             this.headPanel.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -587,8 +607,6 @@
         private System.Windows.Forms.Panel pen;
         private System.Windows.Forms.Panel brush;
         private System.Windows.Forms.Panel fatBrush;
-        private System.Windows.Forms.Panel filling;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MenuStrip headBar;
         private System.Windows.Forms.ToolStripMenuItem Files;
         private System.Windows.Forms.ToolStripMenuItem SaveDefault;
@@ -624,6 +642,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel activeColorPanel;
         private System.Windows.Forms.ToolStripMenuItem newPaper;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Panel eraser;
     }
 }
 

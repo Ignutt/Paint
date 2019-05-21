@@ -25,15 +25,18 @@ namespace Paint
         bool paint = false,
              brushDrawing = false,
              penDrawing = true,
-             fillingDrawing = false,
+             eraserDrawing = false,
              fatBrushDrawing = false;
 
-        Color colorOfInstrument = Color.Black;
+        Color colorOfInstrument = Color.Black,
+              colorForEraser = Color.White;
+        
 
         int defaultSizeBrush = 10,
             defaultSizePen = 5,
             defaultSizeFatBrushWidth = 10,
-            defaultSizeFatBrushHeight = 30;
+            defaultSizeFatBrushHeight = 30,
+            defaultSizeEraser = 30;
 
         // Paint
         private void desk_MouseDown(object sender, MouseEventArgs e)
@@ -41,6 +44,7 @@ namespace Paint
             paint = true;
             Graphics g = desk.CreateGraphics();
             SolidBrush brushes = new SolidBrush(colorOfInstrument);
+            SolidBrush eraserBrushes = new SolidBrush(colorForEraser);
 
             Image bmp = desk.Image;
             Graphics graph = Graphics.FromImage(bmp);
@@ -59,10 +63,11 @@ namespace Paint
             {
                 g.FillEllipse(brushes, e.X, e.Y, defaultSizeFatBrushWidth, defaultSizeFatBrushHeight);
                 graph.FillEllipse(brushes, e.X, e.Y, defaultSizeBrush, defaultSizeBrush);
-            }
-            else if (fillingDrawing == true)
+            }          
+            else if (eraserDrawing == true)
             {
-                desk.BackColor = Color.White;
+                g.FillRectangle(eraserBrushes, e.X, e.Y, defaultSizeEraser, defaultSizeEraser);
+                graph.FillRectangle(eraserBrushes, e.X, e.Y, defaultSizeEraser, defaultSizeEraser);
             }
         }    
 
@@ -72,6 +77,7 @@ namespace Paint
             {
                 Graphics g = desk.CreateGraphics();
                 SolidBrush brushes = new SolidBrush(colorOfInstrument);
+                SolidBrush eraserBrushes = new SolidBrush(colorForEraser);
 
                 Image bmp = desk.Image;
                 Graphics graph = Graphics.FromImage(bmp);
@@ -89,11 +95,12 @@ namespace Paint
                 else if (fatBrushDrawing == true)
                 {
                     g.FillEllipse(brushes, e.X, e.Y , defaultSizeFatBrushWidth, defaultSizeFatBrushHeight);
-                    graph.FillRectangle(brushes, e.X, e.Y, defaultSizePen, defaultSizePen);
+                    graph.FillRectangle(brushes, e.X, e.Y, defaultSizeFatBrushWidth, defaultSizeFatBrushHeight);
                 }
-                else if (fillingDrawing == true)
+                else if (eraserDrawing == true)
                 {
-                    desk.BackColor = Color.Yellow;
+                    g.FillRectangle(eraserBrushes, e.X, e.Y, defaultSizeEraser, defaultSizeEraser);
+                    graph.FillRectangle(eraserBrushes, e.X, e.Y, defaultSizeEraser, defaultSizeEraser);
                 }
             }
         }
@@ -147,12 +154,12 @@ namespace Paint
             this.Cursor = Cursors.Default;
         }
 
-        private void filling_MouseEnter(object sender, EventArgs e)
+        private void eraser_MouseEnter(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Hand;
         }
 
-        private void filling_MouseLeave(object sender, EventArgs e)
+        private void eraser_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
         }
@@ -164,12 +171,12 @@ namespace Paint
             penDrawing = true;
             brushDrawing = false;
             fatBrushDrawing = false;
-            fillingDrawing = false;
+            eraserDrawing = false;
 
             pen.BorderStyle = BorderStyle.FixedSingle;
             brush.BorderStyle = BorderStyle.None;
             fatBrush.BorderStyle = BorderStyle.None;
-            filling.BorderStyle = BorderStyle.None;
+            eraser.BorderStyle = BorderStyle.None;
         }
 
         private void brush_Click(object sender, EventArgs e)
@@ -177,12 +184,12 @@ namespace Paint
             penDrawing = false;
             brushDrawing = true;
             fatBrushDrawing = false;
-            fillingDrawing = false;
+            eraserDrawing = false;
 
             pen.BorderStyle = BorderStyle.None;
             brush.BorderStyle = BorderStyle.FixedSingle;
             fatBrush.BorderStyle = BorderStyle.None;
-            filling.BorderStyle = BorderStyle.None;
+            eraser.BorderStyle = BorderStyle.None;
         }
 
         private void fatBrush_Click(object sender, EventArgs e)
@@ -190,24 +197,25 @@ namespace Paint
             penDrawing = false;
             brushDrawing = false;
             fatBrushDrawing = true;
-            fillingDrawing = false;
+            eraserDrawing = false;
 
             pen.BorderStyle = BorderStyle.None;
             brush.BorderStyle = BorderStyle.None;
             fatBrush.BorderStyle = BorderStyle.FixedSingle;
-            filling.BorderStyle = BorderStyle.None;
+            eraser.BorderStyle = BorderStyle.None;
         }
-        private void filling_Click(object sender, EventArgs e)
+
+        private void eraser_Click(object sender, EventArgs e)
         {
             penDrawing = false;
             brushDrawing = false;
             fatBrushDrawing = false;
-            fillingDrawing = true;
+            eraserDrawing = true;
 
             pen.BorderStyle = BorderStyle.None;
             brush.BorderStyle = BorderStyle.None;
             fatBrush.BorderStyle = BorderStyle.None;
-            filling.BorderStyle = BorderStyle.FixedSingle;
+            eraser.BorderStyle = BorderStyle.FixedSingle;
         }
 
         // Make Pallet
