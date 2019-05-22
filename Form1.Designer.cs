@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.headBar = new System.Windows.Forms.MenuStrip();
             this.Files = new System.Windows.Forms.ToolStripMenuItem();
-            this.SaveDefault = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.newPaper = new System.Windows.Forms.ToolStripMenuItem();
             this.about = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.headPanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.eraser = new System.Windows.Forms.Panel();
             this.pen = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.fatBrush = new System.Windows.Forms.Panel();
@@ -72,7 +72,10 @@
             this.blackColorPanel = new System.Windows.Forms.Panel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.desk = new System.Windows.Forms.PictureBox();
-            this.eraser = new System.Windows.Forms.Panel();
+            this.uploadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.headBar.SuspendLayout();
             this.headPanel.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -81,6 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gradientPanel)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.desk)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // headBar
@@ -90,36 +95,30 @@
             this.about});
             this.headBar.Location = new System.Drawing.Point(0, 0);
             this.headBar.Name = "headBar";
-            this.headBar.Size = new System.Drawing.Size(939, 24);
+            this.headBar.Size = new System.Drawing.Size(944, 24);
             this.headBar.TabIndex = 9;
             // 
             // Files
             // 
             this.Files.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SaveDefault,
+            this.uploadToolStripMenuItem,
             this.SaveAs,
             this.newPaper});
             this.Files.Name = "Files";
             this.Files.Size = new System.Drawing.Size(42, 20);
             this.Files.Text = "Files";
             // 
-            // SaveDefault
-            // 
-            this.SaveDefault.Name = "SaveDefault";
-            this.SaveDefault.Size = new System.Drawing.Size(112, 22);
-            this.SaveDefault.Text = "Save";
-            // 
             // SaveAs
             // 
             this.SaveAs.Name = "SaveAs";
-            this.SaveAs.Size = new System.Drawing.Size(112, 22);
+            this.SaveAs.Size = new System.Drawing.Size(180, 22);
             this.SaveAs.Text = "Save as";
             this.SaveAs.Click += new System.EventHandler(this.SaveAs_Click);
             // 
             // newPaper
             // 
             this.newPaper.Name = "newPaper";
-            this.newPaper.Size = new System.Drawing.Size(112, 22);
+            this.newPaper.Size = new System.Drawing.Size(180, 22);
             this.newPaper.Text = "New";
             this.newPaper.Click += new System.EventHandler(this.newPaper_Click);
             // 
@@ -140,13 +139,14 @@
             // headPanel
             // 
             this.headPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.headPanel.Controls.Add(this.panel5);
             this.headPanel.Controls.Add(this.panel4);
             this.headPanel.Controls.Add(this.panel3);
             this.headPanel.Controls.Add(this.panel2);
             this.headPanel.Controls.Add(this.panel1);
             this.headPanel.Location = new System.Drawing.Point(1, 25);
             this.headPanel.Name = "headPanel";
-            this.headPanel.Size = new System.Drawing.Size(938, 105);
+            this.headPanel.Size = new System.Drawing.Size(943, 105);
             this.headPanel.TabIndex = 10;
             // 
             // panel4
@@ -161,6 +161,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(117, 95);
             this.panel4.TabIndex = 31;
+            // 
+            // eraser
+            // 
+            this.eraser.BackgroundImage = global::Paint.Properties.Resources.eraser;
+            this.eraser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.eraser.Location = new System.Drawing.Point(0, 38);
+            this.eraser.Name = "eraser";
+            this.eraser.Size = new System.Drawing.Size(37, 37);
+            this.eraser.TabIndex = 2;
+            this.eraser.Click += new System.EventHandler(this.eraser_Click);
+            this.eraser.MouseEnter += new System.EventHandler(this.eraser_MouseEnter);
+            this.eraser.MouseLeave += new System.EventHandler(this.eraser_MouseLeave);
             // 
             // pen
             // 
@@ -556,30 +568,53 @@
             this.desk.MouseMove += new System.Windows.Forms.MouseEventHandler(this.desk_MouseMove);
             this.desk.MouseUp += new System.Windows.Forms.MouseEventHandler(this.desk_MouseUp);
             // 
-            // eraser
+            // uploadToolStripMenuItem
             // 
-            this.eraser.BackgroundImage = global::Paint.Properties.Resources.eraser;
-            this.eraser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.eraser.Location = new System.Drawing.Point(0, 38);
-            this.eraser.Name = "eraser";
-            this.eraser.Size = new System.Drawing.Size(37, 37);
-            this.eraser.TabIndex = 2;
-            this.eraser.Click += new System.EventHandler(this.eraser_Click);
-            this.eraser.MouseEnter += new System.EventHandler(this.eraser_MouseEnter);
-            this.eraser.MouseLeave += new System.EventHandler(this.eraser_MouseLeave);
+            this.uploadToolStripMenuItem.Name = "uploadToolStripMenuItem";
+            this.uploadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uploadToolStripMenuItem.Text = "Upload";
+            this.uploadToolStripMenuItem.Click += new System.EventHandler(this.uploadToolStripMenuItem_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Location = new System.Drawing.Point(351, 5);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(117, 95);
+            this.panel5.TabIndex = 32;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(25, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "size of tools";
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(622, 370);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(104, 45);
+            this.trackBar1.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(939, 593);
+            this.ClientSize = new System.Drawing.Size(944, 591);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.headPanel);
             this.Controls.Add(this.desk);
             this.Controls.Add(this.headBar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.headBar;
+            this.MaximumSize = new System.Drawing.Size(960, 630);
+            this.MinimumSize = new System.Drawing.Size(960, 630);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paint";
@@ -596,6 +631,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gradientPanel)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.desk)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -609,7 +647,6 @@
         private System.Windows.Forms.Panel fatBrush;
         private System.Windows.Forms.MenuStrip headBar;
         private System.Windows.Forms.ToolStripMenuItem Files;
-        private System.Windows.Forms.ToolStripMenuItem SaveDefault;
         private System.Windows.Forms.ToolStripMenuItem SaveAs;
         private System.Windows.Forms.ToolStripMenuItem about;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
@@ -646,6 +683,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Panel eraser;
+        private System.Windows.Forms.ToolStripMenuItem uploadToolStripMenuItem;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TrackBar trackBar1;
     }
 }
 

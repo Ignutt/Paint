@@ -18,6 +18,12 @@ namespace Paint
         }
         Form mainForm = new Form1();
         int timeValue = 3, counterSeconds = 0;
+
+        private void loadingScreen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void loadingScreenTimer_Tick(object sender, EventArgs e)
         {
             counterSeconds++;

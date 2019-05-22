@@ -581,5 +581,22 @@ namespace Paint
             }
         }
 
+        private void uploadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Image Files(*.BMP;*.JPG;*.PNG)|*.BMP;*.JPG;*.PNG|All files (*.*)|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    desk.Image = new Bitmap(dialog.FileName);
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
     }
 }
