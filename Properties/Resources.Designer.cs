@@ -93,6 +93,16 @@ namespace Paint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap githubLogo {
+            get {
+                object obj = ResourceManager.GetObject("githubLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gradient {
             get {
                 object obj = ResourceManager.GetObject("gradient", resourceCulture);
@@ -126,6 +136,16 @@ namespace Paint.Properties {
         internal static System.Drawing.Bitmap pen_img {
             get {
                 object obj = ResourceManager.GetObject("pen_img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sizeOfInstrumentImg {
+            get {
+                object obj = ResourceManager.GetObject("sizeOfInstrumentImg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

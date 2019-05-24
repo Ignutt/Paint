@@ -546,7 +546,7 @@ namespace Paint
             activeColorPanel.BackColor = dialog.Color;
         }
 
-        //Clean Paper
+        // Work with files
         private void newPaper_Click(object sender, EventArgs e)
         {
             desk.Image = Properties.Resources.whitePanel;
@@ -577,7 +577,7 @@ namespace Paint
             }
             else
             {
-                MessageBox.Show("Дэбил");
+                MessageBox.Show("ERROR", "err");
             }
         }
 
@@ -593,10 +593,27 @@ namespace Paint
                 }
                 catch
                 {
-
+                    MessageBox.Show("ERROR", "err");
                 }
             }
         }
 
+        // Size of tools
+        private void panelOfSizeOfTools_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void panelOfSizeOfTools_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+
+        }
+        // About progect
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form about = new aboutForm();
+            about.Show();
+        }
     }
 }
