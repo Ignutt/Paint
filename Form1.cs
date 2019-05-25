@@ -22,6 +22,7 @@ namespace Paint
             Application.Exit();
         }
 
+
         bool paint = false,
              brushDrawing = false,
              penDrawing = true,
@@ -32,12 +33,12 @@ namespace Paint
               colorForEraser = Color.White;
         
 
-        int defaultSizeBrush = 10,
-            defaultSizePen = 5,
-            defaultSizeFatBrushWidth = 10,
-            defaultSizeFatBrushHeight = 30,
-            defaultSizeEraser = 30;
-
+        public static int
+                defaultSizeBrush = 10,
+                defaultSizePen = 5,
+                defaultSizeFatBrushWidth = 10,
+                defaultSizeFatBrushHeight = 30,
+                defaultSizeEraser = 30;
         // Paint
         private void desk_MouseDown(object sender, MouseEventArgs e)
         {
@@ -526,7 +527,6 @@ namespace Paint
             activeColorPanel.BackColor = Color.Purple;
         }
 
-
         // Make another color
         private void gradientPanel_MouseEnter(object sender, EventArgs e)
         {
@@ -609,11 +609,18 @@ namespace Paint
             this.Cursor = Cursors.Default;
 
         }
+
+        private void panelOfSizeOfTools_Click(object sender, EventArgs e)
+        {
+            Form settingDialog = new settingsSizeMenu();
+            settingDialog.ShowDialog();
+        }
+
         // About progect
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form about = new aboutForm();
-            about.Show();
+            about.ShowDialog();
         }
     }
 }

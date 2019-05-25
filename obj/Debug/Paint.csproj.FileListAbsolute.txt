@@ -19,3 +19,4 @@ D:\SpaceWork\CSharp\Paint\obj\Debug\Paint.exe
 D:\SpaceWork\CSharp\Paint\obj\Debug\Paint.pdb
 D:\SpaceWork\CSharp\Paint\obj\Debug\Paint.loadingScreen.resources
 D:\SpaceWork\CSharp\Paint\obj\Debug\Paint.aboutForm.resources
+D:\SpaceWork\CSharp\Paint\obj\Debug\Paint.settingsSizeMenu.resources

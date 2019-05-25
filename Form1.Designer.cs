@@ -39,14 +39,20 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.headPanel = new System.Windows.Forms.Panel();
             this.backgroundSizeOfTools = new System.Windows.Forms.Panel();
+            this.panelOfSizeOfTools = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.eraser = new System.Windows.Forms.Panel();
+            this.pen = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.fatBrush = new System.Windows.Forms.Panel();
+            this.brush = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.activeColorPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.gradientPanel = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -69,12 +75,6 @@
             this.yellowColorPanel = new System.Windows.Forms.Panel();
             this.blackColorPanel = new System.Windows.Forms.Panel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.panelOfSizeOfTools = new System.Windows.Forms.Panel();
-            this.eraser = new System.Windows.Forms.Panel();
-            this.pen = new System.Windows.Forms.Panel();
-            this.fatBrush = new System.Windows.Forms.Panel();
-            this.brush = new System.Windows.Forms.Panel();
-            this.gradientPanel = new System.Windows.Forms.PictureBox();
             this.desk = new System.Windows.Forms.PictureBox();
             this.headBar.SuspendLayout();
             this.headPanel.SuspendLayout();
@@ -82,8 +82,8 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gradientPanel)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.desk)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,7 +139,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -166,6 +166,18 @@
             this.backgroundSizeOfTools.Size = new System.Drawing.Size(104, 95);
             this.backgroundSizeOfTools.TabIndex = 32;
             // 
+            // panelOfSizeOfTools
+            // 
+            this.panelOfSizeOfTools.BackColor = System.Drawing.Color.Silver;
+            this.panelOfSizeOfTools.BackgroundImage = global::Paint.Properties.Resources.sizeOfInstrumentImg;
+            this.panelOfSizeOfTools.Location = new System.Drawing.Point(26, 8);
+            this.panelOfSizeOfTools.Name = "panelOfSizeOfTools";
+            this.panelOfSizeOfTools.Size = new System.Drawing.Size(55, 65);
+            this.panelOfSizeOfTools.TabIndex = 11;
+            this.panelOfSizeOfTools.Click += new System.EventHandler(this.panelOfSizeOfTools_Click);
+            this.panelOfSizeOfTools.MouseEnter += new System.EventHandler(this.panelOfSizeOfTools_MouseEnter);
+            this.panelOfSizeOfTools.MouseLeave += new System.EventHandler(this.panelOfSizeOfTools_MouseLeave);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -189,6 +201,31 @@
             this.panel4.Size = new System.Drawing.Size(117, 95);
             this.panel4.TabIndex = 31;
             // 
+            // eraser
+            // 
+            this.eraser.BackgroundImage = global::Paint.Properties.Resources.eraser;
+            this.eraser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.eraser.Location = new System.Drawing.Point(0, 38);
+            this.eraser.Name = "eraser";
+            this.eraser.Size = new System.Drawing.Size(37, 37);
+            this.eraser.TabIndex = 2;
+            this.eraser.Click += new System.EventHandler(this.eraser_Click);
+            this.eraser.MouseEnter += new System.EventHandler(this.eraser_MouseEnter);
+            this.eraser.MouseLeave += new System.EventHandler(this.eraser_MouseLeave);
+            // 
+            // pen
+            // 
+            this.pen.BackgroundImage = global::Paint.Properties.Resources.pen_img;
+            this.pen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pen.Location = new System.Drawing.Point(0, 0);
+            this.pen.Name = "pen";
+            this.pen.Size = new System.Drawing.Size(37, 37);
+            this.pen.TabIndex = 1;
+            this.pen.Click += new System.EventHandler(this.pen_Click);
+            this.pen.MouseEnter += new System.EventHandler(this.pen_MouseEnter);
+            this.pen.MouseLeave += new System.EventHandler(this.pen_MouseLeave);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -198,6 +235,30 @@
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 2;
             this.label7.Text = "tools";
+            // 
+            // fatBrush
+            // 
+            this.fatBrush.BackgroundImage = global::Paint.Properties.Resources.widthBrush_img_;
+            this.fatBrush.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.fatBrush.Location = new System.Drawing.Point(78, 0);
+            this.fatBrush.Name = "fatBrush";
+            this.fatBrush.Size = new System.Drawing.Size(37, 37);
+            this.fatBrush.TabIndex = 3;
+            this.fatBrush.Click += new System.EventHandler(this.fatBrush_Click);
+            this.fatBrush.MouseEnter += new System.EventHandler(this.fatBrush_MouseEnter);
+            this.fatBrush.MouseLeave += new System.EventHandler(this.fatBrush_MouseLeave);
+            // 
+            // brush
+            // 
+            this.brush.BackgroundImage = global::Paint.Properties.Resources.brush_img;
+            this.brush.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.brush.Location = new System.Drawing.Point(40, 0);
+            this.brush.Name = "brush";
+            this.brush.Size = new System.Drawing.Size(37, 37);
+            this.brush.TabIndex = 2;
+            this.brush.Click += new System.EventHandler(this.brush_Click);
+            this.brush.MouseEnter += new System.EventHandler(this.brush_MouseEnter);
+            this.brush.MouseLeave += new System.EventHandler(this.brush_MouseLeave);
             // 
             // panel3
             // 
@@ -249,6 +310,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(72, 84);
             this.panel2.TabIndex = 29;
+            // 
+            // gradientPanel
+            // 
+            this.gradientPanel.BackgroundImage = global::Paint.Properties.Resources.gradient;
+            this.gradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gradientPanel.Location = new System.Drawing.Point(10, 2);
+            this.gradientPanel.Name = "gradientPanel";
+            this.gradientPanel.Size = new System.Drawing.Size(53, 50);
+            this.gradientPanel.TabIndex = 1;
+            this.gradientPanel.TabStop = false;
+            this.gradientPanel.Click += new System.EventHandler(this.gradientPanel_Click);
+            this.gradientPanel.MouseEnter += new System.EventHandler(this.gradientPanel_MouseEnter);
+            this.gradientPanel.MouseLeave += new System.EventHandler(this.gradientPanel_MouseLeave);
             // 
             // label1
             // 
@@ -517,85 +591,12 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // panelOfSizeOfTools
-            // 
-            this.panelOfSizeOfTools.BackColor = System.Drawing.Color.Silver;
-            this.panelOfSizeOfTools.BackgroundImage = global::Paint.Properties.Resources.sizeOfInstrumentImg;
-            this.panelOfSizeOfTools.Location = new System.Drawing.Point(26, 8);
-            this.panelOfSizeOfTools.Name = "panelOfSizeOfTools";
-            this.panelOfSizeOfTools.Size = new System.Drawing.Size(55, 65);
-            this.panelOfSizeOfTools.TabIndex = 11;
-            this.panelOfSizeOfTools.MouseEnter += new System.EventHandler(this.panelOfSizeOfTools_MouseEnter);
-            this.panelOfSizeOfTools.MouseLeave += new System.EventHandler(this.panelOfSizeOfTools_MouseLeave);
-            // 
-            // eraser
-            // 
-            this.eraser.BackgroundImage = global::Paint.Properties.Resources.eraser;
-            this.eraser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.eraser.Location = new System.Drawing.Point(0, 38);
-            this.eraser.Name = "eraser";
-            this.eraser.Size = new System.Drawing.Size(37, 37);
-            this.eraser.TabIndex = 2;
-            this.eraser.Click += new System.EventHandler(this.eraser_Click);
-            this.eraser.MouseEnter += new System.EventHandler(this.eraser_MouseEnter);
-            this.eraser.MouseLeave += new System.EventHandler(this.eraser_MouseLeave);
-            // 
-            // pen
-            // 
-            this.pen.BackgroundImage = global::Paint.Properties.Resources.pen_img;
-            this.pen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pen.Location = new System.Drawing.Point(0, 0);
-            this.pen.Name = "pen";
-            this.pen.Size = new System.Drawing.Size(37, 37);
-            this.pen.TabIndex = 1;
-            this.pen.Click += new System.EventHandler(this.pen_Click);
-            this.pen.MouseEnter += new System.EventHandler(this.pen_MouseEnter);
-            this.pen.MouseLeave += new System.EventHandler(this.pen_MouseLeave);
-            // 
-            // fatBrush
-            // 
-            this.fatBrush.BackgroundImage = global::Paint.Properties.Resources.widthBrush_img_;
-            this.fatBrush.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.fatBrush.Location = new System.Drawing.Point(78, 0);
-            this.fatBrush.Name = "fatBrush";
-            this.fatBrush.Size = new System.Drawing.Size(37, 37);
-            this.fatBrush.TabIndex = 3;
-            this.fatBrush.Click += new System.EventHandler(this.fatBrush_Click);
-            this.fatBrush.MouseEnter += new System.EventHandler(this.fatBrush_MouseEnter);
-            this.fatBrush.MouseLeave += new System.EventHandler(this.fatBrush_MouseLeave);
-            // 
-            // brush
-            // 
-            this.brush.BackgroundImage = global::Paint.Properties.Resources.brush_img;
-            this.brush.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.brush.Location = new System.Drawing.Point(40, 0);
-            this.brush.Name = "brush";
-            this.brush.Size = new System.Drawing.Size(37, 37);
-            this.brush.TabIndex = 2;
-            this.brush.Click += new System.EventHandler(this.brush_Click);
-            this.brush.MouseEnter += new System.EventHandler(this.brush_MouseEnter);
-            this.brush.MouseLeave += new System.EventHandler(this.brush_MouseLeave);
-            // 
-            // gradientPanel
-            // 
-            this.gradientPanel.BackgroundImage = global::Paint.Properties.Resources.gradient;
-            this.gradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.gradientPanel.Location = new System.Drawing.Point(10, 2);
-            this.gradientPanel.Name = "gradientPanel";
-            this.gradientPanel.Size = new System.Drawing.Size(53, 50);
-            this.gradientPanel.TabIndex = 1;
-            this.gradientPanel.TabStop = false;
-            this.gradientPanel.Click += new System.EventHandler(this.gradientPanel_Click);
-            this.gradientPanel.MouseEnter += new System.EventHandler(this.gradientPanel_MouseEnter);
-            this.gradientPanel.MouseLeave += new System.EventHandler(this.gradientPanel_MouseLeave);
-            // 
             // desk
             // 
             this.desk.BackColor = System.Drawing.Color.White;
             this.desk.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.desk.Image = global::Paint.Properties.Resources.whitePanel;
-            this.desk.Location = new System.Drawing.Point(13, 148);
+            this.desk.Location = new System.Drawing.Point(13, 142);
             this.desk.Name = "desk";
             this.desk.Size = new System.Drawing.Size(919, 433);
             this.desk.TabIndex = 0;
@@ -634,8 +635,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gradientPanel)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.desk)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
